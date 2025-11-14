@@ -20,75 +20,79 @@
   <!--                 HERO                  -->
   <!-- ===================================== -->
 
-  <header class="hero">
-    <div class="container hero-content">
+  <header class="hero" aria-label="Hero — Colônia de Férias ÁPIS">
+  <div class="container hero-content">
 
-      <div class="brand-row">
-        <div class="logo">
-          <img src="logo-placeholder.png" alt="ClinicÁPIS - logo">
-        </div>
-
-        <div class="top-cta">
-          <button class="btn-ghost" onclick="scrollToForm()">Quero ser contatado</button>
-          <button class="btn-primary" onclick="openWhatsApp()">💬 Falar agora</button>
-        </div>
+    <div class="brand-row">
+      <div class="logo">
+        <img src="logo.png" alt="ClinicÁPIS - logo">
       </div>
 
-  <h1>🚨 As Férias Chegaram… e Agora?</h1>
-
-  <p class="hero-lead">
-    As férias começaram e a rotina continua. Você trabalha, corre atrás de tudo —  
-    enquanto seu filho, cheio de energia, fica preso no sofá, no celular, entediado  
-    e sem viver o que realmente importa.
-    <br><br>
-
-    <strong>E isso dói.</strong>  
-    A culpa aparece. O medo das telas aumenta.  
-    A sensação de “eu queria fazer mais, mas não consigo” bate forte.
-    <br><br>
-
-    <strong>Mas este ano pode ser completamente diferente.</strong>
-  </p>
-
-  <div class="hero-highlights">
-    <div class="highlight">✔️ Dias de alegria e movimento</div>
-    <div class="highlight">✔️ Criatividade, convivência e descobertas</div>
-    <div class="highlight">✔️ Segurança total enquanto você trabalha em paz</div>
-  </div>
-
-  <p class="hero-lead" style="margin-top:18px;">
-    A Colônia de Férias ÁPIS transforma as férias do seu filho com afeto, propósito  
-    e atividades que desenvolvem de verdade.
-  </p>
-
-  <span style="
-    font-weight:800;
-    color:#fff;
-    background:rgba(0,0,0,0.38);
-    padding:8px 14px;
-    border-radius:8px;
-    font-size:1.05rem;
-    display:inline-block;
-    margin:12px 0 22px;
-  ">
-    ⚠️ Vagas extremamente limitadas. Inscrições até 27 de novembro.
-  </span>
-
-  <div class="hero-ctas">
-    <button class="btn-primary btn-cta" onclick="openWhatsApp()">🔥 Quero garantir agora</button>
-    <button class="btn-outline" onclick="scrollToForm()">📲 Prefiro ser contatado</button>
-  </div>
-
-  <div id="countdown" class="countdown"></div>
-
-  <p class="hero-note">
-    📅 <strong>01/12/2025 a 30/01/2026</strong>  
-    • Matutino (8h–12h)  
-    • Vespertino (13h30–17h30)
-  </p>
-
+      <div class="top-cta" aria-hidden="true">
+        <button class="btn-ghost" onclick="scrollToForm()">Quero ser contatado</button>
+        <button class="btn-primary" onclick="openWhatsApp()">💬 Falar agora</button>
+      </div>
     </div>
-  </header>
+
+    <h1>
+      🚨 As Férias Chegaram… 
+      <span style="color:#FBC531; font-size:3.2rem; font-weight:900; display:inline-block; margin-left:6px;">E AGORA?</span>
+    </h1>
+
+    <p class="hero-lead">
+      As férias começaram e a rotina continua — enquanto você trabalha, seu filho, cheio de energia,
+      fica preso nas telas, entediado e sem estímulos.
+      <br><br>
+
+      <strong style="background: rgba(255,107,107,0.14); color:#FF6B6B; padding:6px 10px; border-radius:6px;">
+        E isso pesa.
+      </strong>
+      &nbsp;A culpa aparece. O medo do excesso de telas aumenta. A sensação de
+      <em style="color:#4DD0FF;">“eu queria oferecer mais, mas não consigo”</em> bate forte.
+      <br><br>
+      <hr style="border:0; height:1px; background:rgba(255,255,255,0.25); margin:16px auto; width:70%;">
+
+      <strong style="color:#FBC531; font-size:1.32rem;">Mas este ano pode ser diferente.</strong>
+      <br>
+      A Colônia de Férias ÁPIS oferece <strong style="color:#004AAD;">segurança, acolhimento e desenvolvimento real</strong>,
+      com atividades que estimulam criatividade, socialização e autonomia — tudo coordenado por profissionais especializados.
+    </p>
+
+    <div class="hero-highlights" aria-hidden="true">
+      <div class="highlight">✔️ <span style="color:#32D296;">Desenvolvimento infantil</span> nas férias</div>
+      <div class="highlight">✔️ Criatividade, convivência e <span style="color:#FBC531;">descobertas</span></div>
+      <div class="highlight">✔️ <span style="color:#004AAD;">Segurança total</span> enquanto você trabalha</div>
+    </div>
+
+    <p class="hero-lead" style="margin-top:18px;">
+      Um ambiente preparado, acolhedor e educativo onde seu filho vive dias de alegria, propósito e aprendizado.
+    </p>
+
+    <!-- URGÊNCIA + MICROPROVA -->
+    <div >
+      <span class="urgencia-badge" role="status" aria-live="polite" style="background:rgba(0,0,0,0.45);color:#FBC531;font-weight:800;border:1px solid rgba(255,255,255,0.18);padding:10px 14px;border-radius:8px;">
+        ⚠️ <strong style="color:#FBC531;">ÚLTIMAS VAGAS</strong> • Inscrições até 27/11
+      </span>
+      
+    </div>
+    
+
+    <div class="hero-ctas" role="group" aria-label="Ações principais">
+      <button class="btn-primary btn-cta" onclick="openWhatsApp()">🔥 Quero garantir agora</button>
+      <button class="btn-outline" onclick="scrollToForm()">📲 Prefiro ser contatado</button>
+    </div>
+
+    <div id="countdown" class="countdown" aria-hidden="false"></div>
+
+    <p class="hero-note" style="margin-top:18px;">
+      📅 <strong>01/12/2025 a 30/01/2026</strong>  • Matutino (8h–12h) • Vespertino (13h30–17h30)
+    </p>
+
+
+  </div>
+  
+</header>
+
 
   <main>
 
@@ -171,8 +175,12 @@
     <h2>🧠 Método ÁPIS — Ciência e Afeto Trabalhando Juntos</h2>
 
     <p class="lead">
-      O Método ÁPIS é o coração do nosso trabalho: uma abordagem que une <strong>neurociência, psicopedagogia
-      e afeto</strong> para transformar cada atividade em um momento de desenvolvimento real, leve e significativo.
+      O Método ÁPIS é o coração do nosso trabalho: uma abordagem integrativa que une <strong>neurociência, desenvolvimento global
+      e afeto</strong> para transformar cada atividade em uma experiência de crescimento real, leve e significativa.
+    <br>
+    Aqui, cada criança é estimulada individualmente, com propósito, cuidado e técnica — porque seu filho não precisa de rótulos, ele precisa dos estímulos certos.
+    <br>
+    Na ÁPIS, ciência e afeto trabalham juntos para construir autonomia, fortalecer habilidades e despertar potencial.
     </p>
 
     <div class="grid method-grid">
@@ -243,66 +251,28 @@
 
           <!-- Show de Mágica -->
           <article class="card extras-card">
-            <div class="icon-wrapper extras-icon">
-              <!-- Ícone: Varinha / Estrelas -->
-         <svg width="42" height="42" viewBox="0 0 24 24" fill="none" stroke="#004aad" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round">
-  <line x1="3" y1="21" x2="21" y2="3"/>
-  <path d="M15 3l2 2M19 7l2 2M11 7l2 2"/>
-</svg>
-
-
-
-
-
-            </div>
+              <div class="icon-wrapper">🎭</div>
             <h3>Show de Mágica & Teatro</h3>
             <p>Encantamento, risadas e apresentações que fazem os olhos brilharem.</p>
           </article>
 
           <!-- Cinema -->
           <article class="card extras-card">
-            <div class="icon-wrapper extras-icon">
-              <svg width="42" height="42" viewBox="0 0 24 24" fill="none" stroke="#004aad" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round">
-  <rect x="2" y="7" width="20" height="14" rx="2"></rect>
-  <path d="M2 7l4-4h4l-4 4h4l4-4h4l-4 4"></path>
-</svg>
-
-
-
-
-            </div>
+            <div class="icon-wrapper">🍿</div>
             <h3>Dia do Cinema</h3>
             <p>Filme especial, pipoca, histórias e atividades temáticas.</p>
           </article>
 
           <!-- Zoológico / Fazendinha -->
           <article class="card extras-card">
-            <div class="icon-wrapper1 extras-icon">
-              <!-- Ícone: Pegadas de animal -->
-<svg width="42" height="42" viewBox="0 0 24 24" fill="none" stroke="#004aad" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round">
-  <circle cx="7" cy="9" r="3"></circle>
-  <circle cx="17" cy="9" r="3"></circle>
-  <circle cx="5" cy="17" r="2.4"></circle>
-  <circle cx="19" cy="17" r="2.4"></circle>
-</svg>
-
-
-
-            </div>
+            <div class="icon-wrapper">🐾</div>
             <h3>Zoológico & Fazendinha</h3>
             <p>Contato direto com animais, natureza e descobertas inesquecíveis.</p>
           </article>
 
           <!-- Noite do Pijama -->
           <article class="card extras-card">
-            <div class="icon-wrapper extras-icon">
-              <!-- Ícone: Lua e estrelas -->
-             <svg width="42" height="42" viewBox="0 0 24 24" fill="none" stroke="#004aad" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round">
-  <path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/>
-</svg>
-
-
-            </div>
+            <div class="icon-wrapper">🌙</div>
             <h3>Noite do Pijama</h3>
             <p>Uma noite mágica com histórias, jogos e muita diversão entre amigos.</p>
           </article>

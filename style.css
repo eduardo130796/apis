@@ -53,8 +53,12 @@ html, body {
 }
 
 .hero-content {
-  max-width: 900px;
+  max-width: auto;
   margin: 0 auto;
+}
+
+.urgencia-badge{
+  font-weight:800; color:#fff; background:rgba(0,0,0,0.38); padding:8px 14px; border-radius:8px; font-size:1.05rem; display:inline-block; margin:12px 0 22px;
 }
 
 .brand-row {
@@ -112,6 +116,43 @@ html, body {
   font-weight: 700;
   font-size: 1.1rem;
 }
+
+/* HERO refinado */
+header.hero {
+  background: linear-gradient(135deg, var(--amarelo) 0%, var(--azul) 100%);
+  padding: 64px 20px 86px;
+  color: #fff;
+  position: relative;
+  text-align:center;
+}
+header.hero .hero-content { max-width:920px; margin:0 auto; padding: 8px 0; z-index:2; position:relative; }
+
+.brand-row .logo img { width:140px; height:auto; }
+
+header.hero h1 { font-size:2.6rem; font-weight:900; line-height:1.05; margin-bottom:14px; text-shadow:0 4px 14px rgba(0,0,0,0.22); }
+@media(min-width:1000px){ header.hero h1 { font-size:2.9rem; } }
+
+.hero-lead { font-size:1.12rem; line-height:1.65; color: rgba(255,255,255,0.95); margin:0 auto; }
+.hero-highlights { margin:22px 0; display:flex; gap:12px; justify-content:center; flex-wrap:wrap; }
+.hero-highlights .highlight { background: rgba(255,255,255,0.12); padding:8px 14px; border-radius:28px; font-weight:700; color:#fff; border:1px solid rgba(255,255,255,0.08); }
+
+/* urgencia-badge already inline but ensure spacing small screens */
+.urgencia-badge { font-weight:800; }
+
+/* CTAs */
+.hero-ctas { margin-top:18px; display:flex; gap:12px; justify-content:center; flex-wrap:wrap; }
+
+/* countdown */
+.countdown { margin-top:12px; font-weight:800; font-size:1.15rem; text-shadow:0 2px 8px rgba(0,0,0,0.4); }
+
+/* responsive tighten */
+@media(max-width:760px) {
+  header.hero { padding:48px 20px 64px; }
+  header.hero h1 { font-size:2.1rem; }
+  .hero-lead { font-size:1rem; }
+  .brand-row .logo img { width:120px; }
+}
+
 
 /* ==========================================================
    CTAs / Buttons
