@@ -23,14 +23,8 @@
   <header class="hero" aria-label="Hero — Colônia de Férias ÁPIS">
   <div class="container hero-content">
 
-    <div class="brand-row">
-      <div class="logo">
-        <img src="logo.png" alt="ClinicÁPIS - logo">
-      </div>
-
-      <div class="top-cta" aria-hidden="true">
-        <button class="btn-primary" onclick="openWhatsApp()">💬 Falar agora</button>
-      </div>
+    <div class="logo">
+      <img src="logo.png" alt="ClinicÁPIS - logo">
     </div>
 
     <h1>
@@ -46,9 +40,9 @@
       <strong style="background: rgba(255,107,107,0.14); color:#9B111E; padding:6px 10px; border-radius:6px;">
         E isso pesa.
       </strong>
-      &nbsp;A culpa aparece. O medo do excesso de telas aumenta. A sensação de
-      <em style="color:#4DD0FF;">“eu queria oferecer mais, mas não consigo”</em> bate forte.
-      <br><br>
+      &nbsp;A rotina aperta, as telas acabam sendo a solução rápida, e você sente que seu filho merece algo mais
+      <em style="color:#4DD0FF;">estimulante.</em>
+      <br>
       <hr style="border:0; height:1px; background:rgba(255,255,255,0.25); margin:16px auto; width:70%;">
 
       <strong style="color:#FBC531; font-size:1.32rem;">Mas este ano pode ser diferente.</strong>
@@ -77,7 +71,7 @@
     
 
     <div class="" role="group" aria-label="Ações principais">
-      <button class="btn-cta" onclick="openWhatsApp()">🔥 Quero garantir agora</button>
+      <button class="btn btn-primary btn-cta" onclick="openWhatsApp()">🔥 Quero garantir agora</button>
 
     </div>
 
@@ -85,6 +79,9 @@
 
     <p class="hero-note" style="margin-top:18px;">
       📅 <strong>01/12/2025 a 30/01/2026</strong>  • Matutino (8h–12h) • Vespertino (13h30–17h30)
+    </p>
+    <p class="hero-note" style="margin-top:6px;">
+      📍 <strong>Unidade Planaltina</strong> — Quadra 20, Lote 10, Setor Tradicional, Planaltina-DF (Na rua da Academia Movimento, ao lado do Instituto Santa Rita)
     </p>
 
 
@@ -99,37 +96,46 @@
     <!--             DOR & SOLUÇÃO             -->
     <!-- ===================================== -->
 
-  <section class="pain-solution fade-in">
+    <section class="pain-solution fade-in">
     <div class="container">
 
       <h2>
-        😩 <span class="pain-color">As férias chegam…</span> 
-        <span class="pain-soft">e a sobrecarga também</span>
+        😩 <span style="color:#e57373;">As férias chegam…</span> 
+        <span style="color:#5a4abf;">e a sobrecarga também</span>
       </h2>
 
       <p class="lead">
-        Você trabalha, cuida da casa, tenta dar conta de tudo — e, ao mesmo tempo,
-        sente a culpa de ver seu filho passando horas nas telas, entediado, sozinho
-        e sem estímulo. É exaustivo. É real. E você não precisa carregar isso sozinho.
+        Você trabalha, cuida da casa e tenta equilibrar tudo — enquanto percebe seu filho passando mais tempo 
+        nas telas do que gostaria. 
+        <br>
+        <span style="color:#5a4abf; font-weight:600;">É cansativo. É real.</span> 
+        E você não precisa enfrentar isso sozinho.
       </p>
 
-        <div class="solution-card">
-          <h3>💙 A ÁPIS cuida do que mais importa pra você.</h3>
-          <p>
-            Enquanto você trabalha ou organiza sua rotina, seu filho vive dias cheios de alegria,
-            movimento, criatividade e convivência — tudo em um ambiente seguro, acolhedor e com
-            <strong>profissionais especializados em desenvolvimento infantil</strong>.
-          </p>
-        </div>
+      <div class="solution-card">
+        <h3 style="color:#4A90E2; font-weight:800;">
+          💙 A ÁPIS cuida do que mais importa pra você.
+        </h3>
 
-      </div>
-
-      <div class="cta-row">
-        <button class="btn-cta" onclick="openWhatsApp()">🔥 Quero garantir a vaga</button>
+        <p>
+          Enquanto você trabalha ou organiza sua rotina, seu filho vive dias cheios de 
+          <span style="color:#f4c430; font-weight:600;">alegria</span>,
+          <span style="color:#5a4abf; font-weight:600;">criatividade</span>,
+          <span style="color:#004AAD; font-weight:600;">segurança</span> e
+          <span style="color:#5a4abf; font-weight:600;">desenvolvimento real</span> —
+          tudo em um ambiente acolhedor, estruturado e conduzido por 
+          <strong>profissionais especializados em desenvolvimento infantil</strong>.
+        </p>
       </div>
 
     </div>
+
+    <div class="cta-row">
+      <button class="btn btn-primary btn-cta" onclick="openWhatsApp()">🔥 Quero garantir a vaga</button>
+    </div>
+
   </section>
+
 
      <!-- ===================================== -->
     <!--          MÉTODO ÁPIS                  -->
@@ -439,10 +445,6 @@
 
 
       </div>
-
-      <div class="cta-row">
-        <button class="btn-cta" onclick="openWhatsApp()">🔥 Escolher meu plano</button>
-      </div>
     </div>
   </section>
 
@@ -531,7 +533,7 @@
         Atendimento rápido, direto e <strong style="color:#FBC531;">humanizado</strong> pelo WhatsApp.
       </p>
 
-      <button class="btn-primary btn-lg" onclick="openWhatsApp()">
+      <button class="btn btn-primary btn-lg" onclick="openWhatsApp()">
         🔥 Falar agora e garantir a vaga
       </button>
 
@@ -578,10 +580,9 @@
   </footer>
 
 
-  <!-- CTA FIXO -->
-  <div class="fixed-cta" onclick="openWhatsApp()">
+  <div class="btn fixed-cta" onclick="openWhatsApp()">
     💬 Falar com a ÁPIS
-  </div>
+</div>
 
   <script src="script.js" defer></script>
 </body>

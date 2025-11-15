@@ -114,7 +114,10 @@ window.scrollToForm = scrollToForm;
     const h = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
     const m = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
 
-    el.textContent = `⏳ Restam ${days} dia(s) ${h}h ${m}m — Vagas extremamente limitadas`;
+   el.innerHTML = `
+  ⏳ Faltam <strong>${days} dia(s)</strong> para o encerramento das inscrições.<br>
+  <span style="color:#ff4d4f; font-weight:700;">⚠ Nenhuma vaga será aberta depois desse prazo.</span>
+`;
   }
 
   updateCountdown();
@@ -173,102 +176,6 @@ window.scrollToForm = scrollToForm;
     showToast("Abrindo WhatsApp…");
     openWhatsApp(msg);
     form.reset();
-  });
-})();
-
-
-/* ==========================================================
-   FORMULÁRIO BACKUP → Google Sheets
-   ========================================================== */
-
-(function bindBackupForm() {
-  const form = document.getElementById("leadBackupForm");
-  if (!form) return;
-
-  const loading = (state) => {
-    const btn = form.querySelector("button[type='submit']");
-    if (!btn) return;
-    btn.disabled = state;
-    btn.innerText = state ? "Enviando…" : "📩 Enviar meus dados";
-  };
-
-  form.addEventListener("submit", async (e) => {
-    e.preventDefault();
-    loading(true);
-
-    const f = new FormData(form);
-    const payload = {
-      responsavel: f.get("responsavel")?.trim(),
-      crianca: f.get("crianca")?.trim(),
-      telefone: f.get("telefone")?.trim(),
-      unidade: f.get("unidade")?.trim(),
-    };
-
-    // -------- VALIDAÇÃO SIMPLES --------
-    if (!payload.responsavel || !payload.crianca || !payload.telefone || !payload.unidade) {
-      showToast("Preencha todos os campos.");
-      loading(false);
-      return;
-    }
-
-    // Validação mínima do WhatsApp
-    const numLimpo = payload.telefone.replace(/\D/g, "");
-    if (numLimpo.length < 10) {
-      showToast("Digite um telefone válido com DDD.");
-      loading(false);
-      return;
-    }
-
-    // -------- CASO SHEETS ESTEJA DESATIVADO --------
-    if (!SHEETS_URL || SHEETS_URL.includes("SEU_SCRIPT_AQUI")) {
-      showToast("Backup offline — enviando via WhatsApp…");
-
-      const msg = 
-        `Olá! Meu nome é ${payload.responsavel}.` +
-        ` Gostaria de informações sobre a colônia de férias.` +
-        `\n👧 Criança: ${payload.crianca}` +
-        `\n📱 Telefone: ${payload.telefone}` +
-        `\n📍 Unidade: ${payload.unidade}`;
-
-      openWhatsApp(msg);
-      loading(false);
-      form.reset();
-      return;
-    }
-
-    // -------- ENVIO PARA GOOGLE SHEETS --------
-    showToast("Enviando seus dados…");
-
-    try {
-      const res = await fetch(SHEETS_URL, {
-        method: "POST",
-        body: JSON.stringify(payload),
-        headers: { "Content-Type": "application/json" },
-      });
-
-      const json = await res.json();
-
-      if (json.result === "success") {
-        showToast("✅ Dados enviados com sucesso! Aguarde nosso contato.");
-        form.reset();
-      } else {
-        throw new Error("Falha no Google Sheets");
-      }
-
-    } catch (err) {
-      console.error(err);
-
-      showToast("Erro no envio. Vamos tentar pelo WhatsApp…");
-
-      const msg =
-        `Olá! Meu nome é ${payload.responsavel}.` +
-        ` Tentei enviar o formulário, mas deu erro.` +
-        `\nPoderiam entrar em contato comigo?`;
-
-      openWhatsApp(msg);
-    }
-
-    loading(false);
   });
 })();
 
