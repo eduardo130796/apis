@@ -11,21 +11,27 @@
 
 // 👉 Coloque aqui o seu número do WhatsApp EM FORMATO INTERNACIONAL (sem +)
 // Exemplo: 55 + DDD + número  
-// (61) 99999-9999 = 5561999999999
+let BOT_URL = null;
 const WHATSAPP_PHONE = "5561993187274"; // ALTERAR ANTES DE PUBLICAR
 
-// 👉 Se quiser salvar no Google Sheets, cole aqui a URL do Apps Script "/exec"
-const SHEETS_URL = "https://script.google.com/macros/s/AKfycbxJtrSVC26LFi5tG5D0w4plszqY85IXdR_h1k9WPA2v_oLEDbM07sTO7i3e1qeMd7zkMg/exec";
-
-
-/* ==========================================================
-   FUNÇÃO — Abrir WhatsApp
-   ========================================================== */
-
 function openWhatsApp(msg = null) {
-  const defaultMsg =
-    "Olá! Quero garantir a vaga do meu filho na Colônia de Férias ÁPIS 2025/2026. Pode me passar as informações?";
-  
+
+  // rastreamento
+  if (typeof gtag === "function") {
+    gtag('event', 'whatsapp_click', {
+      event_category: 'engajamento',
+      event_label: 'Botão WhatsApp (Landing)'
+    });
+  }
+
+  // se já tiver BotConversa, usa ele
+  if (BOT_URL) {
+    window.open(BOT_URL, "_blank");
+    return;
+  }
+
+  // se ainda não tiver bot, usa o WhatsApp normal
+  const defaultMsg = "Olá! Quero garantir a vaga do meu filho na Colônia de Férias ÁPIS 2025/2026.";
   const message = encodeURIComponent(msg || defaultMsg);
   const url = `https://wa.me/${WHATSAPP_PHONE}?text=${message}`;
 
