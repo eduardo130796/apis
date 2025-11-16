@@ -11,16 +11,21 @@
 
 // 👉 Coloque aqui o seu número do WhatsApp EM FORMATO INTERNACIONAL (sem +)
 // Exemplo: 55 + DDD + número  
-let BOT_URL = null;
+let BOT_URL = "https://api.whatsapp.com/send?phone=556193187274&text=%22Ol%C3%A1!%20Quero%20garantir%20a%20vaga%20do%20meu%20filho%20na%20Col%C3%B4nia%20de%20F%C3%A9rias%20%C3%81PIS%202025/2026.%20Pode%20me%20passar%20as%20informa%C3%A7%C3%B5es?%22";
 const WHATSAPP_PHONE = "5561993187274"; // ALTERAR ANTES DE PUBLICAR
 
 function openWhatsApp(msg = null) {
 
-  // rastreamento
+  // 👉 (1) Evento geral de rastreamento — você já tinha
   if (typeof gtag === "function") {
     gtag('event', 'whatsapp_click', {
       event_category: 'engajamento',
       event_label: 'Botão WhatsApp (Landing)'
+    });
+
+    // 👉 (2) Evento DE CONVERSÃO para o Google Ads (Contato)
+    gtag('event', 'conversion', {
+      'send_to': 'AW-17732873165/OrDbCJGK2sAbEM3X2IdC'
     });
   }
 
@@ -30,7 +35,6 @@ function openWhatsApp(msg = null) {
     return;
   }
 
-  // se ainda não tiver bot, usa o WhatsApp normal
   const defaultMsg = "Olá! Quero garantir a vaga do meu filho na Colônia de Férias ÁPIS 2025/2026.";
   const message = encodeURIComponent(msg || defaultMsg);
   const url = `https://wa.me/${WHATSAPP_PHONE}?text=${message}`;
@@ -44,6 +48,7 @@ function openWhatsApp(msg = null) {
 }
 
 window.openWhatsApp = openWhatsApp;
+
 
 
 /* ==========================================================
